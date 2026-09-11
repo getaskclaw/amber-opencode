@@ -1,6 +1,6 @@
 # amber-opencode
 
-Public periodic [AMBER](https://github.com/getaskclaw/amber) benchmark results of models served by OpenCode Go (opencode.ai/zen/go). **Cases stay private; results are public.** 中文说明:[README.md](README.md)
+Public periodic [AMBER](https://github.com/getaskclaw/amber) benchmark results of models served by OpenCode Go (opencode.ai/zen/go). **Cases stay private; results are public.** 中文说明：[README.md](README.md)
 
 ## What this is
 
