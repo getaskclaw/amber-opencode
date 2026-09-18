@@ -1,0 +1,361 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": "Same v4.1, two relay lanes: OpenCode Go → CommandCode (same day/band/hashes)",
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "cc ≥ this lane everywhere: ui-build zero → perfect, verify +0.17 (13/15 best band); 16 vs 17 is the surface — behavior is the real variable of a relay lane",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "width": 480,
+ "height": 256,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
+  },
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "data": {
+    "values": [
+     {
+      "face": "ui-build",
+      "from": 0.0,
+      "to": 1.0
+     },
+     {
+      "face": "verify",
+      "from": 0.526,
+      "to": 0.696
+     },
+     {
+      "face": "vision",
+      "from": 0.222,
+      "to": 0.333
+     },
+     {
+      "face": "review",
+      "from": 0.5,
+      "to": 0.556
+     },
+     {
+      "face": "build",
+      "from": 0.958,
+      "to": 0.958
+     },
+     {
+      "face": "text",
+      "from": 1.0,
+      "to": 1.0
+     },
+     {
+      "face": "ops",
+      "from": 1.0,
+      "to": 1.0
+     },
+     {
+      "face": "req-drift",
+      "from": 1.0,
+      "to": 1.0
+     }
+    ]
+   },
+   "mark": {
+    "type": "rule",
+    "color": "#ccc",
+    "strokeWidth": 2.5
+   },
+   "encoding": {
+    "x": {
+     "field": "from",
+     "type": "quantitative"
+    },
+    "x2": {
+     "field": "to"
+    },
+    "y": {
+     "field": "face",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "ui-build",
+       "verify",
+       "vision",
+       "review",
+       "build",
+       "text",
+       "ops",
+       "req-drift"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "face": "ui-build",
+      "v": 0.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "verify",
+      "v": 0.526,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "vision",
+      "v": 0.222,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "review",
+      "v": 0.5,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "text",
+      "v": 1.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "ops",
+      "v": 1.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "band": "from",
+      "dir": "from"
+     },
+     {
+      "face": "ui-build",
+      "v": 1.0,
+      "band": "to",
+      "dir": "gain"
+     },
+     {
+      "face": "verify",
+      "v": 0.696,
+      "band": "to",
+      "dir": "gain"
+     },
+     {
+      "face": "vision",
+      "v": 0.333,
+      "band": "to",
+      "dir": "gain"
+     },
+     {
+      "face": "review",
+      "v": 0.556,
+      "band": "to",
+      "dir": "gain"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "text",
+      "v": 1.0,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "ops",
+      "v": 1.0,
+      "band": "to",
+      "dir": "flat"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "band": "to",
+      "dir": "flat"
+     }
+    ]
+   },
+   "mark": {
+    "type": "point",
+    "filled": true,
+    "opacity": 1,
+    "stroke": "white",
+    "strokeWidth": 1
+   },
+   "encoding": {
+    "x": {
+     "field": "v",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1.05
+      ]
+     },
+     "axis": {
+      "title": "completion (pin pass-rate)",
+      "values": [
+       0,
+       0.25,
+       0.5,
+       0.75,
+       1.0
+      ],
+      "grid": true
+     }
+    },
+    "y": {
+     "field": "face",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "ui-build",
+       "verify",
+       "vision",
+       "review",
+       "build",
+       "text",
+       "ops",
+       "req-drift"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 12.5
+     }
+    },
+    "size": {
+     "field": "band",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "from",
+       "to"
+      ],
+      "range": [
+       190,
+       110
+      ]
+     },
+     "legend": null
+    },
+    "color": {
+     "field": "dir",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "from",
+       "gain",
+       "flat"
+      ],
+      "range": [
+       "#999999",
+       "#1e8449",
+       "#5b8fc9"
+      ]
+     },
+     "legend": {
+      "title": null,
+      "orient": "bottom",
+      "offset": 10,
+      "labelExpr": "{'from':'OpenCode Go lane','gain':'cc higher','flat':'flat'}[datum.value]"
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "face": "ui-build",
+      "v": 1.0,
+      "t": "+1.00"
+     },
+     {
+      "face": "verify",
+      "v": 0.696,
+      "t": "+0.17"
+     },
+     {
+      "face": "vision",
+      "v": 0.333,
+      "t": "+0.11"
+     },
+     {
+      "face": "review",
+      "v": 0.556,
+      "t": "+0.06"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "t": "0"
+     },
+     {
+      "face": "text",
+      "v": 1.0,
+      "t": "0"
+     },
+     {
+      "face": "ops",
+      "v": 1.0,
+      "t": "0"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "t": "0"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "fontSize": 11,
+    "align": "left",
+    "dx": 10,
+    "color": "#555"
+   },
+   "encoding": {
+    "x": {
+     "field": "v",
+     "type": "quantitative"
+    },
+    "y": {
+     "field": "face",
+     "type": "ordinal"
+    },
+    "text": {
+     "field": "t"
+    }
+   }
+  }
+ ]
+}
