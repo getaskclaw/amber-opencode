@@ -28,6 +28,7 @@ Same model name, same provider, two runs can still score differently — inferen
 | Issue | Content | Headline |
 |---|---|---|
 | [2026-W37](results/2026-W37.md) | deepseek-flash (V4.1 GA) full-library debut (23 cases, GA day) | See the issue for scores and verdicts; all three same-name lanes verified genuine v4.1; strong build/ops, with the no-tools phantom-tool-call disease on review/vision papers |
+| [2026-W38 correction notice](results/2026-W38-correction.en.md) | W38 full-library review: 0 cells reversed · 3 held here | 3 W37 ocgo-column cells held; the 16/23 headline may move up |
 
 ## Disclaimer
 

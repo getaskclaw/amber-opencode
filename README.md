@@ -30,6 +30,7 @@ English: [README.en.md](README.en.md)
 | 期 | 内容 | 结论 |
 |---|---|---|
 | [2026-W37](results/2026-W37.md) | deepseek-flash（V4.1 GA）全库首考（23 案，GA 当日） | 成绩与定性裁决见期文；同名跨厂商三方对拍同为真 v4.1；施工/OPS 强，no-tools 场景有「脑内工具调用」老病 |
+| [2026-W38 更正特刊](results/2026-W38-correction.md) | W38 全库复核:本仓改判 0 格 · 挂起 3 格 | W37 ocgo 列 3 格挂起;16/23 可能上移 |
 
 ## 免责
 
