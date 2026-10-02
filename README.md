@@ -1,5 +1,7 @@
 # amber-opencode
 
+> ⚠️ **更正（2026-10-02）**：以下考卷在作答时越出考卷、接触了判分材料，不计胜负。deepseek-flash @ OpenCode Go 有 2 张卷（A-24bcf707、A-8d4bc770）改记 NA，榜上成绩 17/24 → **15'/24**。原因是考场隔离缺陷，责任在我们。本页其余内容保留原样，以[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02.md)为准。
+
 用私有题库 **AMBER** 实测 OpenCode Go（opencode.ai/zen/go）在售模型，只公开结果，不公开题目。
 English: [README.en.md](README.en.md)
 
