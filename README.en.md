@@ -6,6 +6,8 @@
 
 > ⚠️ **Correction (2026-10-02)**: the papers below were answered by a model that left its own paper and touched grading material; they count neither as a pass nor as a fail. deepseek-flash @ OpenCode Go: 2 papers (A-24bcf707, A-8d4bc770) now NA, board score 17/24 → **15'/24**. The cause was an isolation fault in our exam setup; the fault is ours. The rest of this page stays as published; where they differ, the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02.en.md) governs.
 
+> **2026-10-07 update**: A-cdc3d11a (review): On one review case the grader counted every sub-point of a well-formed finding as a separate unproven claim and treated real defects outside its short answer list as false alarms, so a correct, well-formatted review could not reach the passing line; the case is held on every lane, denominator unchanged, until the grader and exam room are repaired and the case is re-sat. This lane (deepseek-flash @ OpenCode Go) the cell goes from a loss to NA (held); the case moves from a loss to NA on 27 lanes and no sitting is re-run. The pass count is unchanged (15'/24 on the board); losses go 6→5 and NA 3→4; the review axis stays 1/2 with 1 NA. The OpenCode Go cell in the matrix of the [W37 issue](results/2026-W37.md) is updated accordingly. See the [amber spec repo correction of 2026-10-07 (A-cdc3d11a)](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-cdc3d11a.en.md).
+
 Public periodic [AMBER](https://github.com/getaskclaw/amber) benchmark results of models served by OpenCode Go (opencode.ai/zen/go). **Cases stay private; results are public.**
 
 ## What this is
