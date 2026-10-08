@@ -1,40 +1,42 @@
-[简体中文](README.zh-CN.md) · English
+[English](README.en.md) · 简体中文
 
 # amber-opencode
 
-> ⚠️ **Correction (2026-10-02, second)**: one defense case, A-d511f9e8, is now NA on every lane (the exam room did not grade the file the model gave in, and the grader asks for something the task text does not say). The denominator and the **number of passed cases do not change**; every lane's total now carries `'`. In this repo's issue tables, read that cell as NA. Everything else stays as published; the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.en.md) governs.
+> ⚠️ **更正（2026-10-02，另一项）**：防御轴的一案 A-d511f9e8 在所有车道上改记 NA（考场判的不是考生交付的文件，判分还要求了题面没写的事）。分母不变，**过案数不变**，每条道的总分都带 `'`。本仓各期成绩表里这一格请按 NA 读，其余内容保留原样，以[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.md)为准。
 
-> ⚠️ **Correction (2026-10-02)**: the papers below were answered by a model that left its own paper and touched grading material; they count neither as a pass nor as a fail. deepseek-flash @ OpenCode Go: 2 papers (A-24bcf707, A-8d4bc770) now NA, board score 17/24 → **15'/24**. The cause was an isolation fault in our exam setup; the fault is ours. The rest of this page stays as published; where they differ, the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02.en.md) governs.
+> ⚠️ **更正（2026-10-02）**：以下考卷在作答时越出考卷、接触了判分材料，不计胜负。deepseek-flash @ OpenCode Go 有 2 张卷（A-24bcf707、A-8d4bc770）改记 NA，榜上成绩 17/24 → **15'/24**。原因是考场隔离缺陷，责任在我们。本页其余内容保留原样，以[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02.md)为准。
 
-Public periodic [AMBER](https://github.com/getaskclaw/amber) benchmark results of models served by OpenCode Go (opencode.ai/zen/go). **Cases stay private; results are public.**
+用私有题库 **AMBER** 实测 OpenCode Go（opencode.ai/zen/go）在售模型，只公开结果，不公开题目。
 
-## What this is
+## 这是什么
 
-- A 'lane' is one vendor's shop/API for a model name; a 'case' is one task, a 'run' is one sitting (a case with more than one variant has more runs).
-- One `results/YYYY-Www.md` per issue: same cases, same harness (the program that runs the exam and scores it), full library per model; same model name across vendors side by side.
-- Each issue pins: library size and hashes, per-case defect-hunt score and pass/fail, terminal states (how the run ended), token usage (when the lane reports it) and latency, environment fingerprint, and a verdict written under evidence rules.
-- Cases, oracles, transcripts (full answer logs)s and intermediates are **never published**.
-- Sister repos: [amber-deepseek](https://github.com/getaskclaw/amber-deepseek) (official DeepSeek lane), [amber-commandcode](https://github.com/getaskclaw/amber-commandcode) (CommandCode lane), [amber-gpt](https://github.com/getaskclaw/amber-gpt), [amber-crof](https://github.com/getaskclaw/amber-crof), [amber-ollama](https://github.com/getaskclaw/amber-ollama), [amber-devin](https://github.com/getaskclaw/amber-devin), [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy) (WorkBuddy ACP lane), [amber-doubao](https://github.com/getaskclaw/amber-doubao), [amber-goldenpotato](https://github.com/getaskclaw/amber-goldenpotato), [amber-kimi](https://github.com/getaskclaw/amber-kimi), [amber-stepfun](https://github.com/getaskclaw/amber-stepfun). This repo's benchmark axis is **same-name cross-vendor duels** — the same model name on OpenCode Go / CommandCode / the official DeepSeek API can be a different endpoint, and every cross-repo citation carries an explicit date and band.
+- 「道」= 同一个模型名在不同家的卖场/接口；「案」= 一道题，「卷」= 一场考试记录（一案多卷 = 一道题的几个变体场次）。
 
-## Publication red lines
+- 每期一篇 `results/YYYY-Www.md`：同题、同 harness（跑考试并记分的程序），对目标模型跑全库；同名模型跨厂商并排。
+- 一期固定报告：题集规模与哈希、每案找茬分（d2 分，我们的打分，算法不公开）与通过/失败、终端终态（程序跑完时的退出状态）、token 用量（若车道上报）与时延、环境指纹、按证据纪律写的定性裁决。
+- 题目、oracle（判分器）、transcript（答题全过程记录）、中间产物**永不公开**（见下「发布纪律」）。
+- 姐妹仓：[amber-deepseek](https://github.com/getaskclaw/amber-deepseek)（DeepSeek 官方道）、[amber-commandcode](https://github.com/getaskclaw/amber-commandcode)（CommandCode 道）、[amber-gpt](https://github.com/getaskclaw/amber-gpt)、[amber-crof](https://github.com/getaskclaw/amber-crof)、[amber-ollama](https://github.com/getaskclaw/amber-ollama)、[amber-devin](https://github.com/getaskclaw/amber-devin)、[amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy)（WorkBuddy ACP 道）、[amber-doubao](https://github.com/getaskclaw/amber-doubao)、[amber-goldenpotato](https://github.com/getaskclaw/amber-goldenpotato)、[amber-kimi](https://github.com/getaskclaw/amber-kimi)、[amber-stepfun](https://github.com/getaskclaw/amber-stepfun)。本仓的对照轴是**同名模型跨厂商对决**——同一个模型名在 OpenCode Go / CommandCode / DeepSeek 官方道上可能是不同端点，跨仓引用一律带日期与档位声明。
+- AMBER 是 agentic 实战题库（施工/运维/审查/视觉/需求漂移——题中要求中途变化），规范与制题工具见 [getaskclaw/amber](https://github.com/getaskclaw/amber)；考题本体私有。
 
-1. Publish only: scores and totals, token usage (when reported), speed, verdicts.
-2. Never publish: case content, oracles/graders, transcripts, candidate workspaces, anything that could rebuild a case.
-3. Every issue pins: model ID, effort band (the thinking-effort setting), date (UTC), harness version, per-case bundle hash — checkable against the public hash index in [amber](https://github.com/getaskclaw/amber).
-4. Case numbering is private: public matrices use stable aliases (A-xxxxxxxx, hash-derived) plus bundle hashes only.
-5. Tone: community measurement, not vendor attacks.
+## 发布纪律（红线）
 
-## A methods note
+1. 只发：分数与聚合、token 用量（若车道上报）、速度、定性裁决。
+2. 永不发：题目内容、oracle/判分器、transcript、考生工作区、任何能复原题面的中间产物。
+3. 每期必钉：模型 ID、effort 档（思考力度档位）、日期（UTC）、harness 版本、每案内容哈希（bundle_sha，每题内容的哈希指纹）。哈希用于对照 [amber](https://github.com/getaskclaw/amber) 的公开哈希清单，自证题集未变。
+4. 案号与题目结构属私有面：公开结果里案例只用稳定别名（A-xxxxxxxx，哈希派生）+ bundle 哈希作句柄；内部案号、变体名、题目描述永不出现。
+5. 基调：这是社区实测，不是对厂商的攻击。数据说话，措辞克制。
 
-Same model name, same provider, two runs can still score differently — inference parameters, load, and server-side versions drift. Relay/aggregator lanes add an upstream routing layer: the same name may not be the same endpoint. Every conclusion here is dated and banded, and we re-test on a fixed rhythm. A single day's number is a snapshot, not a law.
+## 一个方法论前提
 
-## Results index
+同名模型、同 provider，两次跑也可能不同分——推理参数、负载、服务端版本都在漂；转发/聚合道还隔着一层上游路由，同名不一定是同一个端点。所以这里的一切结论都带日期与档位，且定期重测。单日数字是快照，不是定律。
 
-| Issue | Content | Headline |
+## 结果索引
+
+| 期 | 内容 | 结论 |
 |---|---|---|
-| [2026-W37](results/2026-W37.md) | deepseek-flash (V4.1 GA) full-library debut (23 cases, GA day) | See the issue for scores and verdicts; all three same-name lanes verified genuine v4.1; strong build/ops, with the no-tools phantom-tool-call disease on review/vision papers |
-| [2026-W38 correction notice](results/2026-W38-correction.en.md) | W38 full-library review: 0 cells reversed · 3 held here | 3 W37 ocgo-column cells held; the 16/23 headline may move up |
+| [2026-W37](results/2026-W37.md) | deepseek-flash（V4.1 GA）全库首考（23 案，GA 当日） | 成绩与定性裁决见期文；同名跨厂商三方对拍同为真 v4.1；施工/OPS 强，no-tools 场景有「脑内工具调用」老病 |
+| [2026-W38 更正特刊](results/2026-W38-correction.md) | W38 全库复核:本仓改判 0 格 · 挂起 3 格 | W37 ocgo 列 3 格挂起;16/23 可能上移 |
 
-## Disclaimer
+## 免责
 
-Not affiliated with or sponsored by OpenCode or DeepSeek. Scores are dated, band-specific snapshots, not buying advice.
+与 OpenCode、DeepSeek（深度求索）无任何隶属/赞助关系。分数是特定周、特定档位的快照，不构成采购建议。
